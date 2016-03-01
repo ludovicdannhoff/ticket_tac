@@ -1,0 +1,21 @@
+<h1>Votre tableau de bord, <b><?=htmlentities($_SESSION['login'])?></b></h1>
+
+<div class="row border">
+	<h2>Vos informations</h2>
+
+	<h3>Login : <b><?=htmlentities($_SESSION['login'])?></b></h3>
+	<h3>Email : <b><?=htmlentities($email)?></b></h3>
+	<h3>Téléphone : <b><?=htmlentities($phone)?></b></h3>
+	<h3>Avatar : <b><?=htmlentities($avatar)?></b></h3>
+	<h3>Prénom : <b><?=htmlentities($first_name)?></b></h3>
+	<h3>Nom : <b><?=htmlentities($last_name)?></b></h3>
+
+</div>
+
+	<h3>Modifier les paramètres de votre compte :</h3>
+
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-user">Informations personnelles</button>
+
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit-secure">Paramètres de sécurité</button>
+
+	<?php require('apps/edit_user.php'); ?>

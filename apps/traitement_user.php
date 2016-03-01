@@ -60,7 +60,7 @@ if (isset($_POST['action']))
 		// Etape 1
 		if (isset($_POST['login'], $_POST['password1'], $_POST['password2'], $_POST['email'], $_POST['phone'], $_POST['employment'], $_POST['first_name'], $_POST['last_name']))
 		{
-var_dump($_POST);
+// var_dump($_POST);
 			// Etape 2
 			$login = $_POST['login'];
 			$password1 = $_POST['password1'];
@@ -109,14 +109,14 @@ var_dump($_POST);
 	else if ($action == 'edit_user')
 	{
 		// Etape 1
-		if (isset($_POST['email'], $_POST['phone'], $_POST['first_name'], $_POST['last_name'], $_POST['avatar']))
+		if (isset($_POST['email'], $_POST['phone'], $_POST['first_name'], $_POST['last_name'], $_POST['employment']))
 		{
 			// Etape 2
 			$email = $_POST['email'];
 			$phone = $_POST['phone'];
 			$first_name = $_POST['first_name'];
 			$last_name = $_POST['last_name'];
-			$avatar = $_POST['avatar'];
+			$employment = $_POST['employment'];
 
 			// Etape 3
 			// if (strlen($login) < 3)
@@ -127,7 +127,7 @@ var_dump($_POST);
 			{
 				// Etape 4
 
-				$query = "UPDATE users SET email_user='".$email."', phone_user='".$phone."', first_name_user='".$first_name."', last_name_user='".$last_name."', employment_user='".$avatar."' WHERE id_user='".$_SESSION['id']."'";
+				$query = "UPDATE users SET email_user='".$email."', phone_user='".$phone."', first_name_user='".$first_name."', last_name_user='".$last_name."', employment_user='".$employment."' WHERE id_user='".$_SESSION['id']."'";
 
 				$res = mysqli_query($db, $query);
 				if ($res)
@@ -147,7 +147,7 @@ var_dump($_POST);
 		// Etape 1
 		if (isset($_POST['login'], $_POST['old_password'], $_POST['new_password'], $_POST['new_password_repeat']))
 		{
-			var_dump($_POST);
+			// var_dump($_POST);
 
 			// Etape 2
 			$login = $_POST['login'];

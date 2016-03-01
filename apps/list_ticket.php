@@ -1,1 +1,1 @@
-<?php require('views/ticket.phtml') ?>
+<?php require('views/ticket.phtml'); ?>

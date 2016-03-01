@@ -12,7 +12,7 @@ session_start();
 //$domaine = 'localhost';
 // $domaine = '192.168.1.31';
 $domaine = 'mysql51-71.pro';
-// $db = @mysqli_connect("192.168.1.76", "root", "troiswa", "ticket_tac");
+// $db = @mysqli_connect("192.168.1.17", "3wa", "troiswa", "ticket_tac");
 $db = @mysqli_connect("localhost", "root", "troiswa", "ticket_tac");
 if (!$db)
 	// var_dump($db);
@@ -21,7 +21,7 @@ if (!$db)
 
 // SECURISATION DE LA VARIABLE PAGE -> $page
 $page = "home";
-$access_page = [ 'register', 'account', 'admin', 'home' ];
+$access_page = [ 'register', 'account', 'admin', 'edit_user', 'home' ];
 
 if (isset($_GET['page']))
 {
@@ -71,4 +71,6 @@ if ( isset($traitement) )
 
 // SKEL
 require('apps/skel.php');
+require('apps/traitement_user.php');
+require('apps/traitement_ticket.php');
 ?>

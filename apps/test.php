@@ -1,1 +1,0 @@
-<?php require('views/btn_change_status_admin.phtml') ?>

@@ -1,1 +1,1 @@
-<?php require('views/gestion_user.phtml') ?>
+<?php require('views/gestion_user.phtml'); ?>

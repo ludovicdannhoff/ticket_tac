@@ -1,1 +1,1 @@
-<?php require('views/admin.phtml') ?>
+<?php require('views/admin.phtml'); ?>
