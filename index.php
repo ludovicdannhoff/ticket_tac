@@ -12,8 +12,8 @@ session_start();
 //$domaine = 'localhost';
 // $domaine = '192.168.1.31';
 $domaine = 'mysql51-71.pro';
-$db = @mysqli_connect("192.168.1.31", "thomasbazshare", "dbshare1", "thomasbazshare");
-// $db = @mysqli_connect("127.0.0.1", "root", "", "thomasbazshare");
+// $db = @mysqli_connect("192.168.1.76", "root", "troiswa", "ticket_tac");
+$db = @mysqli_connect("localhost", "root", "troiswa", "ticket_tac");
 if (!$db)
 	// var_dump($db);
 	// exit;
@@ -21,7 +21,7 @@ if (!$db)
 
 // SECURISATION DE LA VARIABLE PAGE -> $page
 $page = "home";
-$access_page = [ 'register', 'account', 'list_command', 'list_user' , 'home' ];
+$access_page = [ 'register', 'account', 'admin', 'home' ];
 
 if (isset($_GET['page']))
 {
@@ -36,7 +36,7 @@ if (isset($_GET['page']))
 
 // SECURISATION DE LA VARIABLE ACTION -> $action
 $action = "";
-$access_action = ['edit_secure', 'edit_user', 'edit_plat', 'next_week' ,'previous_week' , 'creat_command', 'valid_command' , 'edit_command' , 'delete_command' , 'login', 'logout', 'register','creat_comment'];
+$access_action = ['edit_secure', 'edit_user', 'login', 'logout', 'register'];
 
 if (isset($_POST['action']))
 {
@@ -55,17 +55,10 @@ $traitements_page = [
 	'list_user'=>'user',
 ];
 $traitements_action = [
-	'edit_plat'=>'plat',
-	'next_week'=>'plat',
-	'previous_week'=>'plat',
-	'creat_command'=>'command',
-	'valid_command'=>'command',
-	'edit_command'=>'command',
-	'delete_command'=>'command',
 	'login'=>'user',
 	'logout'=>'user',
 	'register'=>'user',
-	'creat_comment'=>'comment'
+	'edit_secure'=>'user'
 ];
 if ( isset($traitements_page[$page]) )
 	$traitement = $traitements_page[$page];

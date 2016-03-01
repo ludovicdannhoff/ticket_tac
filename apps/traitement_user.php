@@ -27,19 +27,19 @@ if (isset($_POST['action']))
 			{
 				// Etape 4
 				$login = mysqli_real_escape_string($db, $login);
-				$query = "SELECT * FROM bistrot_users WHERE login='".$login."'";
+				$query = "SELECT * FROM users WHERE login_user='".$login."'";
 				$res = mysqli_query($db, $query);
 				if ($res)
 				{
 					$user = mysqli_fetch_assoc($res);
 					if ($user)
 					{
-						if (password_verify($password, $user['password']))
+						if (password_verify($password, $user['password_user']))
 						{
 							// Etape 5
-							$_SESSION['id'] = $user['id'];
-							$_SESSION['login'] = $user['login'];
-							$_SESSION['role'] = $user['role'];
+							$_SESSION['id'] = $user['id_user'];
+							$_SESSION['login'] = $user['login_user'];
+							$_SESSION['role'] = $user['role_user'];
 							header('Location: home');
 							exit;
 						}
@@ -58,18 +58,18 @@ if (isset($_POST['action']))
 	else if ($action == 'register')
 	{
 		// Etape 1
-		if (isset($_POST['login'], $_POST['password1'], $_POST['password2'], $_POST['email'], $_POST['phone'], $_POST['first_name'], $_POST['last_name'], $_POST['avatar']))
+		if (isset($_POST['login'], $_POST['password1'], $_POST['password2'], $_POST['email'], $_POST['phone'], $_POST['employment'], $_POST['first_name'], $_POST['last_name']))
 		{
-
+var_dump($_POST);
 			// Etape 2
 			$login = $_POST['login'];
 			$password1 = $_POST['password1'];
 			$password2 = $_POST['password2'];
 			$email = $_POST['email'];
 			$phone = $_POST['phone'];
+			$employment = $_POST['employment'];
 			$first_name = $_POST['first_name'];
 			$last_name = $_POST['last_name'];
-			$avatar = $_POST['avatar'];
 			// Etape 3
 			if (strlen($login) < 3)
 				$error = "Login trop court (< 3)";
@@ -87,9 +87,11 @@ if (isset($_POST['action']))
 				$password = password_hash($password, PASSWORD_BCRYPT, ['cost'=>12]);
 				$password = mysqli_real_escape_string($db, $password);
 
-				$query = "INSERT INTO bistrot_users (login, password, email, phone, first_name, last_name, avatar) VALUES('".$login."', '".$password."', '".$email."', '".$phone."', '".$first_name."', '".$last_name."', '".$avatar."')";
+				$query = "INSERT INTO users (login_user, password_user, email_user, phone_user, first_name_user, last_name_user, employment_user) VALUES('".$login."', '".$password."', '".$email."', '".$phone."', '".$first_name."', '".$last_name."', '".$employment."')";
 				$res = mysqli_query($db, $query);
+				var_dump(mysqli_error($db));
 				if ($res)
+
 				{
 					// Etape 5
 							$_SESSION['id'] = mysqli_insert_id($db);
@@ -125,7 +127,7 @@ if (isset($_POST['action']))
 			{
 				// Etape 4
 
-				$query = "UPDATE bistrot_users SET email='".$email."', phone='".$phone."', first_name='".$first_name."', last_name='".$last_name."', avatar='".$avatar."' WHERE id='".$_SESSION['id']."'";
+				$query = "UPDATE users SET email_user='".$email."', phone_user='".$phone."', first_name_user='".$first_name."', last_name_user='".$last_name."', employment_user='".$avatar."' WHERE id_user='".$_SESSION['id']."'";
 
 				$res = mysqli_query($db, $query);
 				if ($res)
@@ -165,7 +167,7 @@ if (isset($_POST['action']))
 			// else (strlen($login) > 31)
 			// 	$error = "Login trop long (> 31)";
 
-			$query = "SELECT * FROM bistrot_users WHERE id='".$_SESSION['id']."'";
+			$query = "SELECT * FROM users WHERE id_user='".$_SESSION['id']."'";
 			$res = mysqli_query($db, $query);
 			$user = mysqli_fetch_assoc($res);
 
@@ -178,7 +180,7 @@ if (isset($_POST['action']))
 				$password = password_hash($new_password, PASSWORD_BCRYPT, ['cost'=>12]);
 				$password = mysqli_real_escape_string($db, $password);
 
-				$query = "UPDATE bistrot_users SET login='".$login."', password='".$password."' WHERE id='".$_SESSION['id']."'";
+				$query = "UPDATE users SET login_user='".$login."', password_user='".$password."' WHERE id_user='".$_SESSION['id']."'";
 				// var_dump($query);die;
 				$res = mysqli_query($db, $query);
 				if ($res)
