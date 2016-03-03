@@ -1,4 +1,5 @@
 <?php 
+/* ##PASCAL ~> Pas besoin de faire une variable ici, mais pourquoi pas */
 // var_dump($_SESSION);
 if ( $session_role == 'admin' )
 	$home = 'home';

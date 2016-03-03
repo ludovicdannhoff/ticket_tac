@@ -1,7 +1,7 @@
 <?php
 
 // var_dump('coucou');
-
+/* ##PASCAL ~> Je déconseille de créer des variables pour ça, le mieux est de checker dans votre code a chaque $_SESSION directement */
 if ( !empty($_SESSION) )
 {
     $session_id = $_SESSION['id'];

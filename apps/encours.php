@@ -9,6 +9,7 @@ while ($tickets = mysqli_fetch_assoc($result))// On récupère les résultats de
 	$title = $tickets['titre_tickets'];
 	$content = $tickets['content_tickets'];
 	$deadline = $tickets['deadline_tickets'];
+	/* ##PASCAL ~> La variable $ticket(s) ! */
 	$number++;
 	require('views/ticket.phtml');
 }

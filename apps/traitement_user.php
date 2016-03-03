@@ -41,6 +41,7 @@ if (isset($_POST['action']))
 							$_SESSION['login'] = $user['login_user'];
 							$_SESSION['role'] = $user['role_user'];
 							$valid = "Vous êtes connecté !!!";
+							/* ##PASCAL ~> Et le PRG ? (Post-Redirect-Get) */
 							// header('Location: home');
 							// exit;
 						}
@@ -78,6 +79,7 @@ if (isset($_POST['action']))
 				$error = "Login trop long (> 31)";
 			else if (strlen($password1) < 6)
 				$error = "Password trop court (< 6)";
+			/* ##PASCAL ~> Pas de verif sur email, phone, employment, first_name, last_name ? attention aux injections SQL ! */
 			else if ($password1 !== $password2)
 				$error = "Les mots de passe ne correspondent pas";
 			else
@@ -99,6 +101,7 @@ if (isset($_POST['action']))
 					$_SESSION['login'] = $login;
 					$_SESSION['role'] = 'user';
 					$valid = "Votre compte est crée !!!";
+					/* ##PASCAL ~> PRG */
 					// header('Location: home');
 					// exit;
 				}
@@ -119,7 +122,7 @@ if (isset($_POST['action']))
 			$first_name = $_POST['first_name'];
 			$last_name = $_POST['last_name'];
 			$employment = $_POST['employment'];
-
+			/* ##PASCAL ~> Pas de verification du tout :( pas de sécurité non plus, attention ! */
 			// Etape 3
 			// if (strlen($login) < 3)
 			// 	$error = "Login trop court (< 3)";
@@ -136,6 +139,7 @@ if (isset($_POST['action']))
 				{
 					// Etape 5
 					$valid = "Profil modifié !!!";
+					/* ##PASCAL ~> Pas de PRG ;( */
 					// header('Location: account');
 					// exit;
 				}
@@ -158,7 +162,7 @@ if (isset($_POST['action']))
 			$new_password = $_POST['new_password'];
 			$new_password_repeat = $_POST['new_password_repeat'];
 
-			
+			/* ##PASCAL ~> Les mots de passes correspondent pas, mais tant pis on continu quand meme :p */
 			if ($new_password !== $new_password_repeat)
 			{
 				$error = "Les mots de passe ne correspondent pas";
@@ -190,6 +194,7 @@ if (isset($_POST['action']))
 				{
 					// Etape 5
 					$valid = "Paramètres de sécurité modifiés !!!";
+					/* ##PASCAL ~> PRG */
 					// header('Location: account');
 					// exit;
 				}
@@ -207,6 +212,7 @@ if (isset($_POST['action']))
 		session_destroy();
 		$_SESSION = array();
 		header('Location: home');
+		/* ##PASCAL ~> Nickel ! */
 		exit;
 	}
 	else

@@ -1,7 +1,8 @@
 <?php
-
+/* ##PASCAL ~> Attention ici, votre if est "seul" et appeler sans verification de l'action utilisateur, est-ce normal ? en tout cas c'est moins lisible (on sait pas directement ce que veut l'utilisateur) */
 	if(isset($_POST['titreTicket'],$_POST['contentTicket'],$_POST['prioriteTicket']))
 	{
+		/* ##PASCAL ~> Vous vérifiez pas si $_POST['etatTicket'] et $_POST['deadlineTicket'] existe, attention ! */
 		$titre = $_POST['titreTicket'];
 		$content = $_POST['contentTicket'];
 		$priorite = $_POST['prioriteTicket'];
@@ -21,6 +22,7 @@
 			}
 			else
 			{
+				/* ##PASCAL ~> Pas de redirection ? */
 				exit;
 			}
 	}
@@ -33,6 +35,7 @@
 			if(isset($_POST['id']))
 			{
 				$id = $_POST['id'];
+				/* ##PASCAL ~> Si c'est un id, pas besoin de mysqli_real_escape_string, vous pouvez utiliser intval plutôt (plus rapide) */
 				$idVerif = mysqli_real_escape_string($db, $id);
 				$query = "SELECT id_etat_tickets FROM tickets WHERE id_tickets ='".$idVerif."'";
 				$res = mysqli_query($db, $query);
@@ -43,6 +46,7 @@
 				else
 				{
 					$etatTicket = mysqli_fetch_assoc($res);
+					/* ##PASCAL ~> Vérifiez que $etatTicket existe ! */
 					$etatTicketVerif = $etatTicket['id_etat_tickets'];
 					if ($etatTicketVerif >= 0 && $etatTicketVerif < 3)
 					{
@@ -55,6 +59,7 @@
 						}
 						else
 						{
+							/* ##PASCAL ~> Redirection pas top */
 							header('Location: index.php');
 							exit;
 						}

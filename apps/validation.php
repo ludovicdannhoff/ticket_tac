@@ -10,6 +10,7 @@ while ($tickets = mysqli_fetch_assoc($result))// On récupère les résultats de
 	$title = $tickets['titre_tickets'];
 	$content = $tickets['content_tickets'];
 	$deadline = $tickets['deadline_tickets'];
+	/* ##PASCAL ~> Pas besoin de déclarer 5 variables ici, vous avez $ticket(s), utilisez la : <?=$ticket['content_tickets']?> */
 	$number++;
 	require('views/ticket.phtml');
 }
