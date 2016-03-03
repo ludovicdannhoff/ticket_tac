@@ -1,29 +1,41 @@
 <div class="row">
-	<div class="col-md-4 ticket a-faire">
-		<div class="panel panel-warning">
-			<div class="panel-heading">
-				<span class="glyphicon glyphicon-time"></span> A faire
-			</div>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque hic earum ea voluptatum harum fugit, quidem a dicta dolores corrupti tempora aliquid facere accusantium quo dolore totam dolorem possimus? Ut.
+	<div class="col-xs-12">
+		 <div class="classWithPad">
+			<h2>Création de ticket</h2>
+			<?php require('apps/creation.php'); ?>
+		</div>
+	</div>	
+</div>
+<hr>
+<div class="row">
+	<div class="col-xs-4 col-sm-2">
+		 <div class="classWithPad">
+			<h2>En validation</h2>
+			<?php require('apps/validation.php'); ?>
 		</div>
 	</div>
-	<div class="col-md-4 ticket encours">
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<span class="glyphicon glyphicon-play"></span> En cours
-			</div>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque hic earum ea voluptatum harum fugit, quidem a dicta dolores corrupti tempora aliquid facere accusantium quo dolore totam dolorem possimus? Ut.
+	<div class="col-xs-4 col-sm-2">
+		 <div class="classWithPad">
+			<h2>A faire</h2>
+			<?php require('apps/afaire.php'); ?>
 		</div>
 	</div>
-	<div class="col-md-4 ticket fait">
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<span class="glyphicon glyphicon-ok"></span> Terminé
-			</div>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam doloribus, ipsum asperiores voluptatibus excepturi inventore maxime nemo velit dolore, hic? Corrupti inventore autem porro ut doloribus soluta. Sunt, quaerat, eaque.
+	<div class="col-xs-4 col-sm-2">
+		 <div class="classWithPad">
+			<h2>En cours</h2>
+			<?php require('apps/encours.php'); ?>
+		</div>
+	</div>	
+	<div class="col-xs-4 col-sm-2">
+		 <div class="classWithPad">
+			<h2>En test</h2>
+			<?php require('apps/test.php'); ?>
+		</div>
+	</div>
+	<div class="col-xs-4 col-sm-2">
+		 <div class="classWithPad">
+			<h2>Fait</h2>
+			<?php require('apps/fait.php'); ?>
 		</div>
 	</div>
 </div>
-
-<?php require('apps/list_ticket.php'); ?>
-<?php require('apps/creation.php'); ?>

@@ -67,3 +67,26 @@ code {
 .dropdown-menu{
   min-width: 0px;
 }
+
+.classWithPad { 
+  padding:10px; 
+  background: rgba(255,255,255,0.4);
+  border-radius: 15px;
+  border: 0.5px solid blue;
+}
+
+label {
+  display: inline-block;
+}
+
+article > img {
+  width: 100%;
+}
+
+button {
+  border-radius: 10px;
+}
+
+.textarea {
+  width: 100%;
+}
