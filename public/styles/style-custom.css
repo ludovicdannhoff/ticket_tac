@@ -3,6 +3,7 @@ html{
 }
 
 body{
+<<<<<<< HEAD
 	-webkit-background-size: cover;
 	background-size: cover;
 	background: url(../images/bg-3.jpg) no-repeat;
@@ -10,16 +11,27 @@ body{
 	/*background: #0F0F0F;*/
 	/*background: #000;*/
 	color: #6D6C6C;
+=======
+	/*-webkit-background-size: cover;
+	background-size: cover;*/
+	/*background: #0F0F0F;*/
+	/*background: #000;*/
+	/*background: url(../images/logo-1.jpg) no-repeat;*/
+	color: #ccc;
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 }
 
 .container{
 	/*background: #000;*/
 	/* background: #0F0F0F; */
+<<<<<<< HEAD
 	background: rgba(255,255,255,0.5);
 	margin-top: 100px;
 	padding: 20px !important;
 	padding-bottom: 50px !important;
 
+=======
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 }
 
 img{
@@ -28,6 +40,7 @@ img{
 	height: 100px ;*/
 }
 
+<<<<<<< HEAD
 h1{
 	background: rgba(255,255,255,0.6);
 	padding: 10px 5px;
@@ -37,6 +50,12 @@ h1{
 .bg-text{
 	/*border: 1px solid #ccc;*/
 	background: rgba(255,255,255,0.6);
+=======
+
+.border{
+	border: 1px solid #ccc;
+	background: #0F0F0F;
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 	display: inline-block;
 	padding: 0 10px;
 }
@@ -49,7 +68,11 @@ h1{
 .login{
 	max-width: 500px;
 	margin: 50px auto;
+<<<<<<< HEAD
 	background: rgba(0,0,0,0.7);
+=======
+	background: #000;
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 	border-radius: 6px;
 	padding: 10px;
 }
@@ -67,9 +90,15 @@ h1{
 	width: 60px;
 }
 
+<<<<<<< HEAD
 .navbar-brand{
 	background: #fff;
 }
+=======
+/*.navbar-brand{
+	background: #000;
+}*/
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 
 /*.navbar-brand a:hover{
 	background: #333232;
@@ -92,6 +121,30 @@ h1{
 	margin-right: 0;
 }
 
+<<<<<<< HEAD
+=======
+/*---------------------------- plat --------------------------------*/
+
+.plat{
+	font-family: 'Montserrat', sans-serif;
+	/*border-bottom: 1px solid #333232;*/
+	margin: 0 0 10px 0;
+}
+
+.jour{
+	text-align: left;
+	font-size: 3rem;
+
+}
+.img-plat{
+	margin-bottom: 20px;
+}
+
+/*.home{
+	border: 1px solid #333232;
+
+}*/
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 
 .footer{
 	text-align: center;

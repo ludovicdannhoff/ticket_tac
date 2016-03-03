@@ -39,6 +39,7 @@
             $("html, body").animate({ scrollTop: 0 }, 600);
             return false;
         });
+<<<<<<< HEAD
 
 
 
@@ -60,5 +61,7 @@
 
 
 
+=======
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
  
     });

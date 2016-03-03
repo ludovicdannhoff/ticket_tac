@@ -11,10 +11,16 @@ session_start();
 // DATABASE
 //$domaine = 'localhost';
 // $domaine = '192.168.1.31';
+<<<<<<< HEAD
 // $domaine = 'mysql51-71.pro';
 // $db = @mysqli_connect("192.168.1.17", "3wa", "troiswa", "ticket_tac");
 $db = @mysqli_connect("localhost", "root", "troiswa", "ticket_tac");
 // $db = @mysqli_connect("localhost", "root", "", "ticket_tac");
+=======
+$domaine = 'mysql51-71.pro';
+// $db = @mysqli_connect("192.168.1.17", "3wa", "troiswa", "ticket_tac");
+$db = @mysqli_connect("localhost", "root", "troiswa", "ticket_tac");
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 if (!$db)
 	// var_dump($db);
 	// exit;
@@ -22,7 +28,11 @@ if (!$db)
 
 // SECURISATION DE LA VARIABLE PAGE -> $page
 $page = "home";
+<<<<<<< HEAD
 $access_page = [ 'register', 'account', 'admin', 'edit_user', 'home_login', 'home' ];
+=======
+$access_page = [ 'register', 'account', 'admin', 'edit_user', 'home' ];
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 
 if (isset($_GET['page']))
 {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 $login = mysqli_real_escape_string($db, $_SESSION['login']);
 $query = "SELECT * FROM `users` WHERE login_user = '".$login."' LIMIT 0, 30 ";
@@ -16,3 +17,6 @@ $role = $user['role_user'];
 
 
 require('views/account.phtml'); ?>
+=======
+<?php require('views/account.phtml'); ?>
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991

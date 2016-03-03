@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Votre tableau de bord, <strong><?=htmlentities($_SESSION['login'])?></strong></h1>
 
 <div class="bg-text">
@@ -9,6 +10,19 @@
 	<h3>Poste : <strong><?=htmlentities($employment)?></strong></h3>
 	<h3>Email : <strong><?=htmlentities($email)?></strong></h3>
 	<h3>Téléphone : <strong><?=htmlentities($phone)?></strong></h3>
+=======
+<h1>Votre tableau de bord, <b><?=htmlentities($_SESSION['login'])?></b></h1>
+
+<div class="row border">
+	<h2>Vos informations</h2>
+
+	<h3>Login : <b><?=htmlentities($_SESSION['login'])?></b></h3>
+	<h3>Email : <b><?=htmlentities($email)?></b></h3>
+	<h3>Téléphone : <b><?=htmlentities($phone)?></b></h3>
+	<h3>Avatar : <b><?=htmlentities($avatar)?></b></h3>
+	<h3>Prénom : <b><?=htmlentities($first_name)?></b></h3>
+	<h3>Nom : <b><?=htmlentities($last_name)?></b></h3>
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 
 </div>
 

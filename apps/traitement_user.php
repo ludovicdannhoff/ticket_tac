@@ -40,9 +40,14 @@ if (isset($_POST['action']))
 							$_SESSION['id'] = $user['id_user'];
 							$_SESSION['login'] = $user['login_user'];
 							$_SESSION['role'] = $user['role_user'];
+<<<<<<< HEAD
 							$valid = "Vous êtes connecté !!!";
 							// header('Location: home');
 							// exit;
+=======
+							header('Location: home');
+							exit;
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 						}
 						else
 							$error = "Mot de passe incorrect";
@@ -95,12 +100,20 @@ if (isset($_POST['action']))
 
 				{
 					// Etape 5
+<<<<<<< HEAD
 					$_SESSION['id'] = mysqli_insert_id($db);
 					$_SESSION['login'] = $login;
 					$_SESSION['role'] = 'user';
 					$valid = "Votre compte est crée !!!";
 					// header('Location: home');
 					// exit;
+=======
+							$_SESSION['id'] = mysqli_insert_id($db);
+							$_SESSION['login'] = $login;
+							$_SESSION['role'] = 'user';
+							header('Location: home');
+							exit;
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 				}
 				else
 					$error = "Erreur interne au serveur";
@@ -135,9 +148,14 @@ if (isset($_POST['action']))
 				if ($res)
 				{
 					// Etape 5
+<<<<<<< HEAD
 					$valid = "Profil modifié !!!";
 					// header('Location: account');
 					// exit;
+=======
+					header('Location: account');
+					exit;
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 				}
 				else
 					$error = "Erreur interne au serveur";
@@ -175,7 +193,11 @@ if (isset($_POST['action']))
 			$user = mysqli_fetch_assoc($res);
 
 
+<<<<<<< HEAD
 			if (password_verify($old_password, $user['password_user']))
+=======
+			if (password_verify($old_password, $user['password']))
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 			{
 
 				// Etape 4
@@ -189,9 +211,14 @@ if (isset($_POST['action']))
 				if ($res)
 				{
 					// Etape 5
+<<<<<<< HEAD
 					$valid = "Paramètres de sécurité modifiés !!!";
 					// header('Location: account');
 					// exit;
+=======
+					header('Location: home');
+					exit;
+>>>>>>> 43d475aaf8de48a8b4ecf35f3cbfa335fdc32991
 				}
 				else
 					$error = "Erreur interne au serveur";
