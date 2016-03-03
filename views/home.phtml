@@ -9,33 +9,42 @@
 <hr>
 <div class="row">
 	<div class="col-xs-4 col-sm-2">
-		 <div class="classWithPad">
+		 <ul class="classWithPad sortableList" id="sortable0">
 			<h2>En validation</h2>
 			<?php require('apps/validation.php'); ?>
-		</div>
+		</ul>
 	</div>
 	<div class="col-xs-4 col-sm-2">
-		 <div class="classWithPad">
+		 <ul class="classWithPad sortableList" id="sortable1" >
 			<h2>A faire</h2>
 			<?php require('apps/afaire.php'); ?>
-		</div>
+		</ul>
 	</div>
 	<div class="col-xs-4 col-sm-2">
-		 <div class="classWithPad">
+		 <ul class="classWithPad sortableList" id="sortable2">
 			<h2>En cours</h2>
 			<?php require('apps/encours.php'); ?>
-		</div>
+		</ul>
 	</div>	
 	<div class="col-xs-4 col-sm-2">
-		 <div class="classWithPad">
+		 <ul class="classWithPad sortableList" id="sortable3">
 			<h2>En test</h2>
 			<?php require('apps/test.php'); ?>
-		</div>
+		</ul>
 	</div>
 	<div class="col-xs-4 col-sm-2">
-		 <div class="classWithPad">
+		 <ul class="classWithPad sortableList" id="sortable4">
 			<h2>Fait</h2>
 			<?php require('apps/fait.php'); ?>
-		</div>
+		</ul>
 	</div>
 </div>
+<script>
+$(function() {
+    $( "ul.sortableList" ).sortable({
+      connectWith: "ul"
+    });
+ 
+    $( "#sortable0, #sortable1, #sortable2, #sortable3, #sortable4" ).disableSelection();
+  });
+</script>

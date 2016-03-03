@@ -1,10 +1,10 @@
-<div class="article">
+<li class="article" id="ticket">
 	<h3><?=htmlentities($date)?></h3>
 	<p>Titre : <?=htmlentities($title)?></p>
 	<p>Contenu : <?=htmlentities($content)?></p>	
 	<p>Deadline : <?=htmlentities($deadline)?></p>
-</div>
-<form method="post"> 
-	 <input type="hidden" name="id" value='<?=htmlentities($id)?>'>
-	 <button type="submit" name="action" value="change_state">Valider</button>
-</form>
+	<form method="post"> 
+		 <input type="hidden" name="id" value=<?=htmlentities($id)?>>
+		 <button type="submit" name="action" value="change_state">Valider</button>
+	</form>
+</li>

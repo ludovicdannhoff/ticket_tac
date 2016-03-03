@@ -25,60 +25,66 @@ if (!$db)
 
 // SECURISATION DE LA VARIABLE PAGE -> $page
 $page = "home";
-$access_page = [ 'register', 'account', 'admin', 'edit_user', 'home_login', 'home' ];
+$access_page = ['home'];
+$access_page_log = [ 'register', 'account', 'admin', 'edit_user', 'home_login' ];
 
 if (isset($_GET['page']))
 {
 	if (in_array($_GET['page'], $access_page))
+	{
 		$page = $_GET['page'];
+	} elseif (isset($_SESSION['id'])) {
+		if (in_array($_GET['page'], $access_page_log))
+		{
+			$page = $_GET['page'];
+		}
+	}
 	else
 	{
-		/* ##PASCAL ~> Au lieu de mettre l'index.php dans vos redirections vous pouvez mettre votre page par défaut, c'est plus propre : home */
-		header('Location: index.php');
+		 ##PASCAL ~> Au lieu de mettre l'index.php dans vos redirections vous pouvez mettre votre page par défaut, c'est plus propre : home 
+		header('Location: home');
 		exit;
 	}
 }
 
 /* ##PASCAL ~> La variable action doit être vérifié directement dans le fichier de traitement qui va bien, pas dans l'index */
 // SECURISATION DE LA VARIABLE ACTION -> $action
-$action = "";
-$access_action = ['edit_secure', 'edit_user', 'login', 'logout', 'register'];
 
-if (isset($_POST['action']))
-{
-	if (in_array($_POST['action'], $access_action))
-		$action = $_POST['action'];
-	else
-	{
-		header('Location: index.php');
-		exit;
-	}
-}
+// $access_action = ['edit_secure', 'edit_user', 'login', 'logout', 'register', 'create_ticket','change_state'];
+
+
 
 // SECURISATION DES FICHIERS DE TRAITEMENTS
-$traitements_page = [
-	'account'=>'user',
-	'list_user'=>'user',
-];
+// $traitements_page = [
+// 	'account'=>'user',
+// 	'list_user'=>'user',
+// ];
 $traitements_action = [
 	'login'=>'user',
 	'logout'=>'user',
 	'register'=>'user',
-	'edit_secure'=>'user'
+	'edit_secure'=>'user',
+	'change_state'=>'ticket',
+	'create_ticket'=>'ticket'
 ];
-/* ##PASCAL ~> Attention, 3 if sans aucun else, ça peut poser des soucis de comportement inatendu ! */
-if ( isset($traitements_page[$page]) )
-	$traitement = $traitements_page[$page];
 
-if ( isset($traitements_action[$action]) )
-	$traitement = $traitements_action[$action];
+if (isset($_POST['action']))
+{
+	$action = $_POST['action'];
+	if (isset($traitements_action[$action])) {
+		$value = $traitements_action[$action];
+		require('apps/traitement_'.$value.'.php');
+	} else {
+		header('Location: home');
+		exit;
+	}
 
-if ( isset($traitement) )
-	require('apps/traitement_'.$traitement.'.php');
+}
+
 
 // SKEL
 require('apps/skel.php');
 /* ##PASCAL ~> Dafuk ? Pourquoi require le traitement au dessus et le refaire ici ? APRES le skel ? aucun intéret, a virer ASAP */
-require('apps/traitement_user.php');
-require('apps/traitement_ticket.php');
+
+// require('apps/traitement_ticket.php');
 ?>

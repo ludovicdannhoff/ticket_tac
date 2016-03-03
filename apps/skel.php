@@ -1,6 +1,6 @@
 <?php
 
-// var_dump('coucou');
+// // var_dump('coucou');
 /* ##PASCAL ~> Je déconseille de créer des variables pour ça, le mieux est de checker dans votre code a chaque $_SESSION directement */
 if ( !empty($_SESSION) )
 {
@@ -18,7 +18,7 @@ else{
 // var_dump($session_role);
 }
 
-// var_dump($_SESSION);
+// // var_dump($_SESSION);
 
 require('views/skel.phtml');
 ?>

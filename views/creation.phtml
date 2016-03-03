@@ -1,9 +1,9 @@
-<form action="" method="post">
+<form type="submit" method="post">
 	 <p>Titre : <input class="textarea" type="text" value="Titre" name="titreTicket" /></p>
 	 <p>Contenu : <textarea class="textarea" rows="5" name="contentTicket"/>Contenu du ticket</textarea></p>	 
 	 <p>Priorité : <input class="textarea" type="text" value="1" name="prioriteTicket" /></p>	 
 	 <p>Etat : <input class="textarea" type="text" value="1" name="etatTicket" /></p>
 	 <p>Pièce-jointe : <input class="textarea" type="url" value="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" name="pjTicket" /></p>
 	 <p>Deadline : <input type="text" id="datepicker" name="deadlineTicket"></p>
-	 <button type="submit">Envoyer</button>
+	 <button type="submit" name="action" value="create_ticket">Envoyer</button>
 </form>
