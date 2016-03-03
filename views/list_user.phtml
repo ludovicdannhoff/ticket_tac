@@ -1,0 +1,18 @@
+<tr>
+	<td><?php echo htmlentities ($users['login_user']);?></td>
+	<td><?php echo htmlentities($users['first_name_user']);?></td>
+	<td><?php echo htmlentities($users['last_name_user']);?></td>
+	<td><?php echo htmlentities($users['email_user']);?></td>
+	<td><?php echo htmlentities($users['phone_user']);?></td>
+	<td><?php echo htmlentities($users['employment_user']);?></td>
+	<td><?php echo htmlentities($users['role_user']);?></td>
+	<td><?php echo htmlentities($users['date_creation_user']);?></td>
+	<td><?php echo htmlentities($users['isActive_user']);?></td>
+	<td>
+		<form method="POST">
+			<input type="hidden" name="userid" value="<?=$users['id_user']?>">
+			<input type="hidden" name="action" value="activer_user">
+			<button type="submit" style="width:100%" name="isActive" value="<?=$buttonvalue?>"><?=$buttontext?></button>
+		</form>
+	</td>
+</tr>
