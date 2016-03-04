@@ -7,33 +7,34 @@
 	</div>	
 </div>
 <div class="row">
-	<div class="col-xs-12 col-sm-2">
-		 <ul class="classWithPad sortableList" id="sortable0">
-			<h2>En validation</h2>
-			<?php require('apps/validation.php'); ?>
+	<div class="col-xs-12 col-sm-2 droptrue">
+		<h2 data-etat="1">En validation</h2>
+		 <ul class="classWithPad droptrue" id="sortable1">
+				<?php require('apps/validation.php'); ?>
+			<ul/>
 		</ul>
 	</div>
-	<div class="col-xs-12 col-sm-3">
-		 <ul class="classWithPad sortableList" id="sortable1" >
-			<h2>A faire</h2>
+	<div class="col-xs-12 col-sm-3 droptrue">
+		<h2 data-etat="2" id="sortable2">A faire</h2>
+		 <ul class="classWithPad droptrue" id="sortable2" >
 			<?php require('apps/afaire.php'); ?>
 		</ul>
 	</div>
-	<div class="col-xs-12 col-sm-2">
-		 <ul class="classWithPad sortableList" id="sortable2">
-			<h2>En cours</h2>
+	<div class="col-xs-12 col-sm-2 droptrue">
+		<h2 data-etat="3" id="sortable3">En cours</h2>
+		 <ul class="classWithPad droptrue" id="sortable3">
 			<?php require('apps/encours.php'); ?>
 		</ul>
 	</div>	
-	<div class="col-xs-12 col-sm-2">
-		 <ul class="classWithPad sortableList" id="sortable3">
-			<h2>En test</h2>
+	<div class="col-xs-12 col-sm-2 droptrue">
+		<h2 data-etat="4" id="sortable4">En test</h2>
+		 <ul class="classWithPad droptrue" id="sortable4">
 			<?php require('apps/test.php'); ?>
 		</ul>
 	</div>
-	<div class="col-xs-12 col-sm-3">
-		 <ul class="classWithPad sortableList" id="sortable4">
-			<h2>Fait</h2>
+	<div class="col-xs-12 col-sm-3 droptrue">
+		<h2 data-etat="5" id="sortable5">Fait</h2>
+		 <ul class="classWithPad droptrue" id="sortable5">
 			<?php require('apps/fait.php'); ?>
 		</ul>
 	</div>
@@ -44,6 +45,6 @@ $(function() {
       connectWith: "ul"
     });
  
-    $( "#sortable0, #sortable1, #sortable2, #sortable3, #sortable4" ).disableSelection();
+    $( "#sortable1, #sortable2, #sortable3, #sortable4, #sortable5" ).disableSelection();
   });
 </script>

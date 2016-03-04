@@ -121,23 +121,23 @@ ul{
 
 
 
-#sortable0 .article, #sortable0 h2{
+#sortable1 .article, #sortable1 h2{
 	border-bottom: rgba(255,255,255,0.9) solid 4px;
 }
 
-#sortable1 .article, #sortable1 h2{
+#sortable2 .article, #sortable2 h2{
 	border-bottom: rgba(77,247,4,0.5) solid 4px;
 }
 
-#sortable2 .article, #sortable2 h2{
+#sortable3 .article, #sortable3 h2{
 	border-bottom: rgba(247,240,34,0.5) solid 4px;
 }
 
-#sortable3 .article, #sortable3 h2{
+#sortable4 .article, #sortable4 h2{
 	border-bottom: rgba(247,169,34,0.5) solid 4px;
 }
 
-#sortable4 .article, #sortable4 h2{
+#sortable5 .article, #sortable5 h2{
 	border-bottom: rgba(247,38,34,0.5) solid 4px;
 }
 /*.row{

@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT * FROM tickets WHERE id_etat_tickets = '1'";// On déclare une variable qui contiendra notre requête SQL
+$query = "SELECT * FROM tickets WHERE id_etat_tickets = '2'";// On déclare une variable qui contiendra notre requête SQL
 $result = mysqli_query($db, $query);// On exécute notre requête SQL
 $number = 1;
 while ($tickets = mysqli_fetch_assoc($result))// On récupère les résultats de notre requête un par un

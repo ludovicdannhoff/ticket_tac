@@ -17,3 +17,19 @@
 	$("#getDate").click(function(){
 		alert($("#datepicker").val());
 	});
+
+  $(function()
+  {
+    $( "ul.droptrue" ).sortable(
+    {
+      connectWith: "ul",
+      stop:function(event, ui)
+      {
+      	var id = $(ui.item).find('[name="id"]').val();
+      	// var etat = $(ui.item).parent('ul').parent('div').find('h2').data('etat');
+      	$.post('home', {id:id,action:'change_state'});
+      }
+    });
+ 
+    $( "#sortable1, #sortable2, #sortable3, #sortable4, #sortable5" ).disableSelection();
+  });

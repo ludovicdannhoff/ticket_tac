@@ -17,7 +17,6 @@ if (isset($_POST['action']))
 			// Etape 2
 			$login = $_POST['login'];
 			$password = $_POST['password'];
-			
 			// Etape 3
 			if (empty($login))
 				$error = "Login vide";
