@@ -67,7 +67,8 @@ $traitements_action = [
 	'edit_user'=>'user',
 	'change_state'=>'ticket',
 	'create_ticket'=>'ticket',
-	'activer_user'=>'admin'
+	'activer_user'=>'admin',
+	'change-state-admin'=>'ticket'
 ];
 
 if (isset($_POST['action']))

@@ -1,0 +1,39 @@
+
+
+<tbody>
+                    <tr class="liste">
+
+                        
+                        <td>
+                        <?=$ticket['titre_tickets']?>
+                        </td>
+
+                        <td>
+                         <?=$ticket['content_tickets']?>    
+                        </td>
+
+                        <td>
+                         <?=$ticket['auteur_tickets']?>
+                        </td>
+                     
+                        <td>
+                            <?=$ticket['date_creation_tickets']?> 
+                        </td>
+                         <td>
+                            <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                        <form method="post"> 
+<input type="hidden" name="id" value=<?=intval($ticket['id_tickets'])?>>
+                                    <button id="singlebutton" type="submit" name="action" class="btn btn-success" value="change-state-admin">VALIDER</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                            </div>
+                         
+                        </td>
+                       
+                    </tr>
+
+</tbody>

@@ -56,7 +56,7 @@ if (isset($_POST['action']))
 					$etatTicket = mysqli_fetch_assoc($res);
 					/* ##PASCAL ~> Vérifiez que $etatTicket existe ! */
 					$etatTicketVerif = $etatTicket['id_etat_tickets'];
-					if ($etatTicketVerif >= 1 && $etatTicketVerif < 4)
+					if ($etatTicketVerif > 1 && $etatTicketVerif < 4)
 					{
 						$etatTicketVerif++;
 						$query = "UPDATE tickets SET id_etat_tickets = '".$etatTicketVerif."' WHERE id_tickets = '".$idVerif."'";
@@ -69,6 +69,48 @@ if (isset($_POST['action']))
 						{
 							header('Location: home');
 							exit;
+						}
+					}
+				}
+			}
+		}
+	}
+	if (isset($_POST['action']))
+	{
+		$action = $_POST['action'];
+		if ($action == 'change-state-admin')
+	
+		{
+			
+
+			if(isset($_POST['id']))
+			{
+				$id = intval($_POST['id']);
+				$query = "SELECT * FROM tickets WHERE id_tickets ='".$id."'";
+				$res = mysqli_query($db, $query);
+				if ($res === false)
+				{
+					$error = "Erreur";
+				}
+				else
+				{
+					$ticket = mysqli_fetch_assoc($res);
+					/* ##PASCAL ~> Vérifiez que $etatTicket existe ! */
+					$etatTicketVerif = $ticket['id_etat_tickets'];
+					if ($etatTicketVerif == 1)
+					{
+						$etatTicketVerif = 2;
+						$query = "UPDATE tickets SET id_etat_tickets = '".$etatTicketVerif."' WHERE id_tickets = '".$id."'";
+						$res = mysqli_query($db, $query);
+						if ($res === false)
+						{
+							$error = "Erreur";
+						}
+						else
+						{
+							header('Location: admin');
+							exit;
+							
 						}
 					}
 				}
