@@ -26,7 +26,7 @@ if (!$db)
 // SECURISATION DE LA VARIABLE PAGE -> $page
 $page = "home";
 $access_page = ['home'];
-$access_page_log = [ 'register', 'account', 'admin', 'edit_user', 'home_login' ];
+$access_page_log = ['account', 'admin', 'edit_user', 'home_login' ];
 
 if (isset($_GET['page']))
 {
@@ -64,6 +64,7 @@ $traitements_action = [
 	'logout'=>'user',
 	'register'=>'user',
 	'edit_secure'=>'user',
+	'edit_user'=>'user',
 	'change_state'=>'ticket',
 	'create_ticket'=>'ticket',
 	'admin'=>'admin'

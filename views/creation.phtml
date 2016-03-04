@@ -1,9 +1,43 @@
-<form type="submit" method="post">
-	 <p>Titre : <input class="textarea" type="text" value="Titre" name="titreTicket" /></p>
-	 <p>Contenu : <textarea class="textarea" rows="5" name="contentTicket"/>Contenu du ticket</textarea></p>	 
-	 <p>Priorité : <input class="textarea" type="text" value="1" name="prioriteTicket" /></p>	 
-	 <p>Etat : <input class="textarea" type="text" value="1" name="etatTicket" /></p>
-	 <p>Pièce-jointe : <input class="textarea" type="url" value="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" name="pjTicket" /></p>
-	 <p>Deadline : <input type="text" id="datepicker" name="deadlineTicket"></p>
-	 <button type="submit" name="action" value="create_ticket">Envoyer</button>
-</form>
+<div class="modal fade" id="modal-creation" tabindex="-1" role="dialog" aria-labelledby="modal-label-creation">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title" id="modal-label-creation">Créer un nouveau ticket</h1>
+      </div>
+      <div class="modal-body">
+			<form type="submit" method="POST">
+				<div class="form-group">
+					<label for="titreTicket">Titre</label>
+				 	<input class="textarea form-control" type="text" placeholder="Titre" name="titreTicket" />
+				</div>
+				<div class="form-group">
+					<label for="contentTicket">Contenu</label>
+				 	<textarea class="textarea form-control" rows="5" name="contentTicket" placeholder="contenu du ticket"/></textarea>	
+				 </div>
+				<div class="form-group">
+					<label for="prioriteTicket">Priorité</label>
+					<input class="textarea form-control" type="text" placeholder="1" name="prioriteTicket" />
+				</div>
+				<div class="form-group">
+					<label for="etatTicket">Etat</label>
+					<input class="textarea form-control" type="text" placeholder="1" name="etatTicket" />
+				</div>
+				<div class="form-group">
+					<label for="pjTicket">Pièce-jointe</label>
+					<input class="textarea form-control" type="url" placeholder="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" name="pjTicket" />
+				</div>
+				<div class="form-group">
+					<label for="deadlineTicket">Deadline</label>
+				 	<input type="text" id="datepicker" class="form-control" name="deadlineTicket">
+				</div>
+				 <button type="submit" class="btn btn-primary" name="action" value="create_ticket">Envoyer</button>
+			</form>
+ </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creation">Créer un nouveau ticket</button>

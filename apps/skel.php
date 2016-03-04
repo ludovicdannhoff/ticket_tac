@@ -10,15 +10,13 @@ if ( !empty($_SESSION) )
         $session_role = 'admin';
     else
         $session_role = 'user';
-// var_dump($session_role);
 }
 else{
     $session_id = null;
     $session_role = null;
-// var_dump($session_role);
 }
 
-// // var_dump($_SESSION);
+
 
 require('views/skel.phtml');
 ?>

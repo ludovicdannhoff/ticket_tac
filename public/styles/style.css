@@ -69,9 +69,9 @@ code {
 }
 
 .classWithPad { 
-  padding:10px; 
-  border-radius: 15px;
-  border: 0.5px solid blue;
+ /* padding:10px; 
+  border-radius: 15px;*/
+  /*border: 0.5px solid blue;*/
 }
 
 label {
@@ -94,7 +94,8 @@ button {
   background: rgba(255,255,255,0.6);
   margin-bottom: 25px; 
   padding: 5px;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
+  /*box-shadow: 2px 2px 4px #999999;*/
 }
 
 ul {
